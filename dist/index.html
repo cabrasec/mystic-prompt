@@ -41,19 +41,6 @@
       justify-content:center;
     }
 
-    .stars{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.18;
-      background-image:
-        radial-gradient(circle at 18% 25%, rgba(255,255,255,.18) 0 1px, transparent 2px),
-        radial-gradient(circle at 38% 62%, rgba(255,255,255,.14) 0 1px, transparent 2px),
-        radial-gradient(circle at 70% 20%, rgba(255,255,255,.16) 0 1px, transparent 2px);
-      background-size:260px 260px;
-      mix-blend-mode:screen;
-    }
-
     .wrap{ width:100%; max-width:820px; }
 
     .card{
@@ -168,16 +155,14 @@
 </head>
 
 <body>
-<div class="stars"></div>
-
 <div class="wrap">
   <div class="card">
     <header>
       <div class="brand">
         <div class="logo">☾</div>
         <div>
-          <div class="name" id="nome">Lua de Lilith Tarot (DEMO)</div>
-          <div class="tag" id="tag">Tarô • Oráculos • Espiritualidade</div>
+          <div class="name">Lua de Lilith Tarot (DEMO)</div>
+          <div class="tag">Tarô • Oráculos • Espiritualidade</div>
         </div>
       </div>
       <div class="pill"><span class="dot"></span> WhatsApp</div>
@@ -221,15 +206,20 @@
 
 <script>
 (function(){
-  const phone = "5512992493021";
-  const waMsg =
-    "Olá! Vi a Presença Digital (DEMO) e quero uma para meu trabalho.";
+  const phone = "5511973737822";
+
+  // ✅ mensagem definida UMA ÚNICA VEZ
+  const waMsg = "Olá! Vi a Presença Digital (DEMO) e quero uma para meu trabalho.";
 
   const redirectSeconds = 40;
 
+  // ✅ encode apenas uma vez
   const waUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(waMsg);
+
+  // CTA manual
   document.getElementById("cta").href = waUrl;
 
+  // Timer + redirect
   const timerEl = document.getElementById("timer");
   let t = redirectSeconds;
 
